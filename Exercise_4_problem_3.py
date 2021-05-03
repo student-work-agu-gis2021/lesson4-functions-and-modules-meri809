@@ -52,12 +52,17 @@ temp_data =  [19, 21, 21, 21, 23, 23, 23, 21, 19, 21, 19, 21, 23, 27, 27, 28, 30
 # #### Part 2 (continues)
 # 
 # 2. Import the `fahr_to_celsius` and `temp_classifier` functions from your `temp_functions.py` 
+import temp_functions as t
 # 3. Create an empty list called `temp_classes` (which will be filled with temperature class numbers later)
+temp_classes = []
 # 4. **Convert the Fahrenheit temperatures** in the `temp_data` list into Celsius and **classify the Celsius temperatures** using the importend functions. The output should be stored in the `temp_classes` list
 #  
 #    **You can do the temperature conversion and classification inside one for loop:**
 # 
 #     - Iterate over the list of Fahrenheit temperatures (create a `for` loop), and inside the loop:
+for i in range(len(temp_data)):
+  temp_class=t.temp_classifier(t.fahr_to_celsius(temp_data[i]))
+  temp_classes.append(temp_class)
 # 
 #         1. Create a new variable called `temp_celsius` in which you should assign the temperature in Celsius using the `fahr_to_celsius` function to convert the Fahrenheit temperature into Celsius.
 #         2. Create a new variable called `temp_class` in which you should assign the temperature class number (0, 1, 2, or 3) using the `temp_classifier` function
@@ -73,7 +78,10 @@ temp_data =  [19, 21, 21, 21, 23, 23, 23, 21, 19, 21, 19, 21, 23, 27, 27, 28, 30
 #     1. Create four variables called `zeros`, `ones`, `twos`, and `threes` 
 #     2. Count and assign to each variable how many times values 0, 1, 2, and 3 are present in the `temp_classes` list and print out the results below. In other words, assign the value of how many time `0` is in the list to the variable `zeros`, and so on. 
 #   
-
+zeros=temp_classes.count(0)
+ones=temp_classes.count(1)
+twos=temp_classes.count(2)
+threes=temp_classes.count(3)
 # YOUR CODE HERE
 
 # **TIP**: You might want to consider using a [**count()** function](https://www.tutorialspoint.com/python3/list_count.htm) OR a for loop for this.
